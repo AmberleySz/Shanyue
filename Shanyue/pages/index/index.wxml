@@ -1,0 +1,20 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">山月</view>
+        <view class="page__desc">的四个按钮</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="weibo">微博</button>
+        <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="resume">简历</button>
+        <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="artMuseum">北京上海小众美术馆一览</button>
+        <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="arles">集美阿尔勒国际摄影季看展综述</button>
+        <view class="weui-progress">
+            <view class="weui-progress__bar">
+                <progress percent="{{progress}}" stroke-width="3" hidden="{{!downloading}}"/>
+            </view>
+            <view class="weui-progress__opr">
+                <icon type="cancel" size="22" hidden="{{!downloading}}" bindtap="cancelDownload"></icon>
+            </view>
+        </view>
+    </view>
+</view>
