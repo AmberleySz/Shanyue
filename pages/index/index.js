@@ -1,5 +1,3 @@
-// weibo miniprogram path: nickname=encodeURIComponent($CONFIG.onick), objectUid=$CONFIG.oid
-
 var app = getApp();
 
 Page({
@@ -11,21 +9,21 @@ Page({
 
   weibo: function() {
     wx.navigateToMiniProgram({
-      appId: app.data.weiboAppId,
-      path: app.data.weiboShanyuePath,
+      appId: app.globalData.dataDict['weiboAppId'],
+      path: app.globalData.dataDict['weiboShanyuePath'],
     })
   },
 
   artMuseum: function() {
-    openFile(this, app.data.artMuseumFile)
+    openFile(this, app.globalData.dataDict['artMuseumFile'])
   },
 
   arles: function() {
-    openFile(this, app.data.arlesFile)
+    openFile(this, app.globalData.dataDict['arlesFile'])
   },
 
   resume: function() {
-    openFile(this, app.data.resumeFile)
+    openFile(this, app.globalData.dataDict['resumeFile'])
   },
 
   cancelDownload: function() {
@@ -44,7 +42,7 @@ function openFile(page, cloudFileID) {
 
   const downloadTask = wx.cloud.downloadFile({
     fileID: cloudFileID,
-    success: function (res) {
+    success: res => {
       wx.openDocument({
         filePath: res.tempFilePath,
       })
@@ -55,7 +53,7 @@ function openFile(page, cloudFileID) {
     downloadTask: downloadTask
   })
 
-  downloadTask.onProgressUpdate(function (res) {
+  downloadTask.onProgressUpdate( res=> {
     if (res.progress < 100) {
       page.setData({
         progress: res.progress,
