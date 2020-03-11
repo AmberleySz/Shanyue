@@ -2,7 +2,7 @@ App({
   globalData: {
     dataDict: {
       'weiboAppId': '',
-      'weiboShanyuePath': '',  // weibo miniprogram path: nickname=encodeURIComponent($CONFIG.onick), objectUid=$CONFIG.oid
+      'weiboShanyuePath': '',  // weibo miniprogram path: pages/profile/profile?nickname=[encodeURIComponent($CONFIG.onick)];objectUid=[$CONFIG.oid]
       'resumeFile': '',
       'resumePasswd': '',
       'artMuseumFile': '',

@@ -8,6 +8,7 @@
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onResume">简历</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onArtMuseum">北京上海小众美术馆一览</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onArles">集美阿尔勒国际摄影季看展综述</button>
+         <official-account binderror="err"></official-account>
         <view class="weui-progress">
             <view class="weui-progress__bar">
                 <progress percent="{{progress}}" stroke-width="3" hidden="{{!downloading}}"/>
