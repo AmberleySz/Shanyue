@@ -4,6 +4,7 @@ App({
       'weiboAppId': '',
       'weiboShanyuePath': '',  // weibo miniprogram path: nickname=encodeURIComponent($CONFIG.onick), objectUid=$CONFIG.oid
       'resumeFile': '',
+      'resumePasswd': '',
       'artMuseumFile': '',
       'arlesFile': ''
     },

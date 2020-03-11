@@ -1,7 +1,3 @@
 .weui-btn {
-  margin: 30rpx;
-}
-
-.weui-progress{
-    margin-bottom: 24px;
+  margin-bottom: 40px;
 }

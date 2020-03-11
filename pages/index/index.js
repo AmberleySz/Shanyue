@@ -5,28 +5,40 @@ Page({
     downloading: false,
     progress: 0,
     downloadTask: null,
+    resumeOpenPending: false
   },
 
-  weibo: function() {
+  onShow: function() {
+    if (this.data.resumeOpenPending) {
+      openFile(this, app.globalData.dataDict['resumeFile'])
+      this.setData({
+        resumeOpenPending: false
+      })
+    }
+  },
+
+  onWeibo: function() {
     wx.navigateToMiniProgram({
       appId: app.globalData.dataDict['weiboAppId'],
       path: app.globalData.dataDict['weiboShanyuePath'],
     })
   },
 
-  artMuseum: function() {
+  onArtMuseum: function() {
     openFile(this, app.globalData.dataDict['artMuseumFile'])
   },
 
-  arles: function() {
+  onArles: function() {
     openFile(this, app.globalData.dataDict['arlesFile'])
   },
 
-  resume: function() {
-    openFile(this, app.globalData.dataDict['resumeFile'])
+  onResume: function() {
+    wx.navigateTo({
+      url: '/pages/passwd/passwd',
+    })
   },
 
-  cancelDownload: function() {
+  onCancelDownload: function() {
     this.data.downloadTask.abort()
     this.setData({
       downloading: false
