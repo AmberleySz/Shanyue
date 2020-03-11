@@ -8,10 +8,6 @@ Page({
     resumeOpenPending: false
   },
 
-  err(evt) {
-    console.log(evt)
-  },
-
   onShow: function() {
     if (this.data.resumeOpenPending) {
       openFile(this, app.globalData.dataDict['resumeFile'])
