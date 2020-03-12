@@ -4,11 +4,13 @@
         <view class="page__desc">生活美学博主山月笑我酣饮～欢迎大家和我一起来看世界</view>
     </view>
     <view class="page__bd page__bd_spacing">
+        <!-- 按钮 -->
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onWeibo">微博</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onResume">简历</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onArtMuseum">北京上海小众美术馆一览</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onArles">集美阿尔勒国际摄影季看展综述</button>
-        <official-account></official-account>
+
+        <!-- 下载进度条 -->
         <view class="weui-progress">
             <view class="weui-progress__bar">
                 <progress percent="{{progress}}" stroke-width="3" hidden="{{!downloading}}"/>
@@ -17,5 +19,25 @@
                 <icon type="cancel" size="22" hidden="{{!downloading}}" bindtap="onCancelDownload"></icon>
             </view>
         </view>
+        
+        <!-- 滑块 -->
+        <swiper circular="true">
+          <block wx:for="{{brands}}" wx:key="index">
+            <swiper-item>
+                <a class="weui-media-box weui-media-box_appmsg">
+                  <view class="weui-media-box__hd">
+                    <image class="weui-media-box__thumb" src="{{item.logoPath}}" alt></image>
+                  </view>
+                  <view class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">{{item.name}}</h4>
+                    <view class="weui-media-box__desc">{{item.description}}</view>
+                  </view>
+                </a>
+            </swiper-item>
+          </block>
+        </swiper>
+
+        <!-- 公众号链接 -->
+        <official-account></official-account>
     </view>
 </view>

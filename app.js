@@ -7,7 +7,7 @@ App({
       'resumePasswd': '',
       'artMuseumFile': '',
       'arlesFile': ''
-    },
+    }
   },
 
   onLaunch () {

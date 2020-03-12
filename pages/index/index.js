@@ -5,7 +5,18 @@ Page({
     downloading: false,
     progress: 0,
     downloadTask: null,
-    resumeOpenPending: false
+    resumeOpenPending: false,
+
+    brands: []
+  },
+
+  onLoad: function() {
+    const db = wx.cloud.database()
+    db.collection('brands').get({
+      success: res => {
+        this.setData({brands: res.data})
+      }
+    })
   },
 
   onShow: function() {
