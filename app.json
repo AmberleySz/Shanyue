@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/passwd/passwd"
+    "pages/passwd/passwd",
+    "pages/webview/webview"
   ],
   "window": {
     "backgroundTextStyle": "light",

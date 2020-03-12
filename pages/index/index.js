@@ -49,11 +49,21 @@ Page({
     })
   },
 
+  onWebview: function() {
+    wx.navigateTo({
+      url: '/pages/webview/webview',
+    })
+  },
+
   onCancelDownload: function() {
     this.data.downloadTask.abort()
     this.setData({
       downloading: false
     })
+  },
+
+  officialAccountErr: function(event) {
+    console.log(event)
   }
 })
 

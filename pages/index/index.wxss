@@ -1,9 +1,13 @@
 .weui-btn {
-  margin-bottom: 10px;
+
   width: 20px;
 }
 
 .weui-progress {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.brands {
+  height: 120px;
 }

@@ -6,7 +6,8 @@ App({
       'resumeFile': '',
       'resumePasswd': '',
       'artMuseumFile': '',
-      'arlesFile': ''
+      'arlesFile': '',
+      'webviewUrl': ''
     }
   },
 

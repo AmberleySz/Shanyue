@@ -9,6 +9,7 @@
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onResume">简历</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onArtMuseum">北京上海小众美术馆一览</button>
         <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onArles">集美阿尔勒国际摄影季看展综述</button>
+        <button class="weui-btn" type="default" disabled="{{downloading}}" bindtap="onWebview">公众号文章</button>
 
         <!-- 下载进度条 -->
         <view class="weui-progress">
@@ -21,7 +22,7 @@
         </view>
         
         <!-- 滑块 -->
-        <swiper circular="true">
+        <swiper class="brands" circular="true">
           <block wx:for="{{brands}}" wx:key="index">
             <swiper-item>
                 <a class="weui-media-box weui-media-box_appmsg">
@@ -38,6 +39,6 @@
         </swiper>
 
         <!-- 公众号链接 -->
-        <official-account></official-account>
+        <official-account binderror="officialAccountErr"></official-account>
     </view>
 </view>
